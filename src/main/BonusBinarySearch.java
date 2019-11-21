@@ -21,7 +21,7 @@ public class BonusBinarySearch {
             } else if (sortedNumbers[mid] < n) {
                 left = mid;
             } else {
-                return mid;
+                return sortedNumbers[mid];
             }
         }
         return -1;
