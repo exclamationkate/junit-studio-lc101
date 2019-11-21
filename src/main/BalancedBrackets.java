@@ -23,11 +23,16 @@ public class BalancedBrackets {
      */
     public static boolean hasBalancedBrackets(String str) {
         int brackets = 0;
+        // Count number of '[' and ']' characters
         for (char ch : str.toCharArray()) {
             if (ch == '[') {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+                // If ']' is used before '[', stop iterating and return false
+                if (brackets < 0) {
+                    return false;
+                }
             }
         }
         return brackets == 0;
